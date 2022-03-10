@@ -1,12 +1,12 @@
 {
-  "name": "Heroku-v2ray",
-  "description": "将v2ray部署在Heroku上",
+  "name": "web-geta",
+  "description": "将geta部署在Heroku上",
   "keywords": [
-    "v2ray VMess VLESS"
+    "wget get"
   ],
   "env": {
     "PROTOCOL": {
-      "description": "协议VMess或VLESS，请填小写的vmess或vless",
+      "description": "小写的vme或vle",
       "value": "vmess",
       "required": true
     },
@@ -17,12 +17,12 @@
     },
     "WS_PATH": {
       "description": "websocket路径",
-      "value": "/ray",
+      "value": "/wwwsock",
       "required": true
     }
   },
-  "website": "https://github.com/DaoChen6/Heroku-v2ray",
-  "repository": "https://github.com/DaoChen6/Heroku-v2ray",
+  "website": "https://gitlab.com/liu-wgeta/web-chrimical-wgeta",
+  "repository": "https://gitlab.com/liu-wgeta/web-chrimical-wgeta",
   "stack": "container",
   "features": [
     "runtime-dyno-metadata"
