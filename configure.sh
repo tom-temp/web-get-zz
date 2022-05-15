@@ -5,10 +5,8 @@
 # export UUID=da311aae-045f-4bf8-b73a-2227d336021a
 # export WS_PATH=112233
 # export PORT=1234
-
 config_path=$PROTOCOL"_ws_tls.json"
 envsubst '\$UUID,\$WS_PATH' < /$config_path > /usr/local/etc/v2ray/config.json
-
 # Run cloudflare
 /cloudreve/cloudreve --c /cloudreve/conf.ini &
 # Run V2Ray
