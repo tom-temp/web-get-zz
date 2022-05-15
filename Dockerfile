@@ -2,7 +2,7 @@ FROM cloudreve/cloudreve:latest
 ENV TZ=Asia/Shanghai
 # RUN echo 'nameserver 223.5.5.5'
 # RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
-RUN apk add --no-cache ca-certificates bash curl unzip nginx gettext # --virtual .build-deps 
+RUN apk add --no-cache ca-certificates curl unzip nginx gettext # --virtual .build-deps 
 
 # v2ray
 # RUN rm -rf /tmp/v2ray
@@ -25,11 +25,14 @@ RUN curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.
 # nginx
 COPY nginx/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY cloudever_config/conf.ini /cloudreve/conf.ini
 
 
 COPY configure.sh /configure.sh
 COPY v2ray_config /
 RUN chmod +x /configure.sh
+
+WORKDIR /
 
 ENTRYPOINT ["sh", "/configure.sh"]
 
