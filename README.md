@@ -1,5 +1,5 @@
 ## v2ray-heroku
-[![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/tom-temp/web-get-a.git)
+[![](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/tom-temp/web-get-zz.git)
 
 ### heroku上部署v2ray
 - [x] 支持VMess和VLESS两种协议
@@ -46,14 +46,14 @@ const SingleDay = 'app0.herokuapp.com'
 const DoubleDay = 'app1.herokuapp.com'
 addEventListener(
     "fetch",event => {
-    
+
         let nd = new Date();
         if (nd.getDate()%2) {
             host = SingleDay
         } else {
             host = DoubleDay
         }
-        
+
         let url=new URL(event.request.url);
         url.hostname=host;
         let request=new Request(url,event.request);
@@ -76,7 +76,7 @@ const Day3 = 'app3.herokuapp.com'
 const Day4 = 'app4.herokuapp.com'
 addEventListener(
     "fetch",event => {
-    
+
         let nd = new Date();
         let day = nd.getDate() % 5;
         if (day === 0) {
@@ -92,7 +92,7 @@ addEventListener(
         } else {
             host = Day1
         }
-        
+
         let url=new URL(event.request.url);
         url.hostname=host;
         let request=new Request(url,event.request);
@@ -117,7 +117,7 @@ const Day5 = 'app5.herokuapp.com'
 const Day6 = 'app6.herokuapp.com'
 addEventListener(
     "fetch",event => {
-    
+
         let nd = new Date();
         let day = nd.getDay();
         if (day === 0) {
@@ -137,7 +137,7 @@ addEventListener(
         } else {
             host = Day1
         }
-        
+
         let url=new URL(event.request.url);
         url.hostname=host;
         let request=new Request(url,event.request);
